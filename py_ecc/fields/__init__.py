@@ -18,6 +18,26 @@ from .optimized_field_elements import (
 
 
 #
+# btoy curve fields
+#
+class btoy_FQ(FQ):
+    field_modulus = 101
+
+
+class btoy_FQP(FQP):
+    field_modulus = 101
+
+
+class btoy_FQ2(FQ2, btoy_FQP):
+    field_modulus = 101
+    FQ2_MODULUS_COEFFS = field_properties["bn128"]["fq2_modulus_coeffs"]
+
+
+class btoy_FQ12(FQ12, btoy_FQP):
+    field_modulus = 101
+    FQ12_MODULUS_COEFFS = field_properties["bn128"]["fq12_modulus_coeffs"]
+
+#
 # bn128 curve fields
 #
 class bn128_FQ(FQ):
